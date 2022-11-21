@@ -1,0 +1,42 @@
+{
+  "bindings": [
+  
+  
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    },
+    
+    {
+      "name": "CosmosIn",
+      "databaseName": "ResumeDB",
+      "collectionName": "Resume",
+      "connectionStringSetting": "COSMOS_CONNECTIONSTRINGSETTINGS",
+      "sqlQuery": "SELECT count('id') as visitorCount from c",
+      "direction": "in",
+      "type": "cosmosDB"
+    },
+    {
+      "name": "cosmosOut",
+      "direction": "out",
+      "type": "cosmosDB",
+      "databaseName": "ResumeDB",
+      "collectionName": "Resume",
+      "connectionStringSetting": "COSMOS_CONNECTIONSTRINGSETTINGS"
+    }
+  
+  
+  
+  ]
+}
