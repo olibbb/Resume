@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - website/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout the repo
+    - uses: actions/checkout@master
+    - uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
