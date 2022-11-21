@@ -1,1 +1,3 @@
 # Resume
+
+![Diagram](diagram.png)
