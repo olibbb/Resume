@@ -51,8 +51,7 @@ resource "azurerm_key_vault_access_policy" "keyvault_policy_tf" {
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = data.azurerm_client_config.current.object_id
   secret_permissions = [
-    "Get",
-    "Set"
+    "Get","Set"
     ]
 }
 
@@ -75,7 +74,6 @@ resource "azurerm_key_vault_secret" "cosmosdb_connectionstring" {
   lifecycle {
     ignore_changes = [value, version]
   }
-
 
 }
 
