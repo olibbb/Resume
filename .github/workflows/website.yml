@@ -14,3 +14,8 @@ jobs:
     - uses: Azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Upload to blob storage
+      uses: Azure/cli@1.0.4
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name saprodwebapp --destination '$web' --source website --overwrite
