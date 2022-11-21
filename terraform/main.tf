@@ -36,7 +36,7 @@ resource "azurerm_resource_group" "rg" {
 
 #Create Key Vault
 resource "azurerm_key_vault" "keyvault" {
-  name                        = "kv-prod-01"
+  name                        = "kv-resume-prod-001"
   location                    = azurerm_resource_group.rg.location
   resource_group_name         = azurerm_resource_group.rg.name
   enabled_for_disk_encryption = true
